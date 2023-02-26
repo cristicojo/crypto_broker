@@ -13,6 +13,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
@@ -37,11 +38,12 @@ public class LimitOrder {
 	@GenericGenerator(name = "native", strategy = "native")
 	private long id;
 
-	@Column(name = "price_limit")
+	@Column(name = "price_limit", precision = 10, scale = 3)
 	private BigDecimal priceLimit;
 
 	private int amount;
 
+	@Column(columnDefinition = "BOOLEAN DEFAULT false")
 	private boolean processed;
 
 

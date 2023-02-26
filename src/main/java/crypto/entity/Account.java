@@ -12,6 +12,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
@@ -38,10 +39,11 @@ public class Account {
 
 	private String name;
 
-	@Column(name = "usd_balance")
+	@Column(name = "usd_balance", precision = 10, scale = 3)
 	private BigDecimal usdBalance;
 
 	@Column(name = "btc_balance")
+	@ColumnDefault("0")
 	private int btcBalance;
 
 
