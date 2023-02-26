@@ -65,7 +65,7 @@ public class LimitOrderServiceImpl implements LimitOrderService {
 	}
 
 
-//	@Scheduled(cron = "${cron-string}")
+	@Scheduled(cron = "${cron-string}")
 	public void executeLimitOrder() {
 
 		HttpResponse<String> response;
@@ -88,7 +88,8 @@ public class LimitOrderServiceImpl implements LimitOrderService {
 			e.printStackTrace();
 		}
 		log.info(GET_RESPONSE + map.get(PRICE_KEY));
-		var price = BigDecimal.valueOf((Double) map.get(PRICE_KEY)).setScale(3, RoundingMode.HALF_UP);
+		var price = BigDecimal.valueOf((Double) map.get(PRICE_KEY))
+				.setScale(3, RoundingMode.HALF_UP);
 
 		limitOrderRepository.findAll()
 				.parallelStream()
