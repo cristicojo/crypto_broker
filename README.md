@@ -1,1 +1,1 @@
-# crypto_broker
+Requirements in python_server/the CBAG_Take-home_challenge_2020.pdf
