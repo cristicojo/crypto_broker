@@ -1,5 +1,6 @@
 package crypto.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,8 +29,8 @@ import java.util.List;
 @AllArgsConstructor
 public class Account {
 
-	@OneToMany(mappedBy = "account")
-	private List<LimitOrder> limitOrders;
+	@OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+	private List<LimitOrder> limitOrders = new ArrayList<>();
 
 
 	@Id
