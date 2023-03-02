@@ -13,7 +13,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
@@ -45,7 +44,6 @@ public class Account {
 	private BigDecimal usdBalance;
 
 	@Column(name = "btc_balance")
-	@ColumnDefault("0")
 	private int btcBalance;
 
 

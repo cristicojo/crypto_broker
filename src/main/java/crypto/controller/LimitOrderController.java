@@ -2,6 +2,7 @@ package crypto.controller;
 
 import crypto.dto.LimitOrderDto;
 import crypto.service.LimitOrderService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +20,7 @@ public class LimitOrderController {
 
 
 	@PostMapping("/createLimitOrder")
-	public LimitOrderDto createLimitOrder(@RequestBody LimitOrderDto limitOrderDto) {
+	public LimitOrderDto createLimitOrder(@RequestBody @Valid LimitOrderDto limitOrderDto) {
 		return service.createLimitOrder(limitOrderDto);
 	}
 

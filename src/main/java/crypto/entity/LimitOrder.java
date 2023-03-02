@@ -43,7 +43,6 @@ public class LimitOrder {
 
 	private int amount;
 
-	@Column(columnDefinition = "BOOLEAN DEFAULT false")
 	private boolean processed;
 
 

@@ -11,11 +11,13 @@ import java.math.BigDecimal;
 public class LimitOrderDto {
 
 	private int id;
+	@NotNull
 	private BigDecimal priceLimit;
 
 	@NotNull
-	private int amount;
+	private Integer amount;
 
+	@NotNull
 	private AccountDto accountDetails;
 
 	private boolean processed;
